@@ -85,12 +85,12 @@ streamlit run app.py
 Yêu cầu Phần cứng
 GPU khuyến nghị: Tối thiểu 8GB VRAM (để chạy Qwen2.5-7B 4-bit).
 RAM: Tối thiểu 12GB.
-Tác giả:
+## Tác giả:
 
-Nguyễn Hồng Sơn
-Phạm Văn Quân
-Đỗ Văn Sinh
-Nguyễn Đức Minh
+- Nguyễn Hồng Sơn
+- Phạm Văn Quân
+- Đỗ Văn Sinh
+- Nguyễn Đức Minh
 
 ## Tài liệu tham khảo (References)
 

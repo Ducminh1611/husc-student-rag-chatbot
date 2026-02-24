@@ -6,37 +6,36 @@ Dự án này xây dựng một hệ thống Retrieval-Augmented Generation (RAG
 
 ---
 
-## 🌟 Giới thiệu
+##  Giới thiệu
 Hệ thống được thiết kế để giải quyết bài toán tra cứu văn bản quy phạm pháp lý phức tạp, đảm bảo:
 * **Trả lời đúng ngữ cảnh:** Trích dẫn đúng điều khoản, chương mục.
 * **Minh bạch:** Có trích dẫn nguồn rõ ràng từ tài liệu gốc.
-* **Zero Hallucination:** Không bịa đặt thông tin; chủ động từ chối trả lời khi tài liệu không chứa thông tin phù hợp.
 
 
 ---
 
-## ✨ Điểm nổi bật (Key Features)
+##  Điểm nổi bật (Key Features)
 
-### 🧩 Semantic Chunking & Header Injection
+###  Semantic Chunking & Header Injection
 * Văn bản không bị cắt theo độ dài cố định mà được chia theo cấu trúc pháp lý: **Chương → Mục → Điều → Khoản**.
 * Tự động gắn tiêu đề ngữ cảnh (Header Injection) vào từng chunk để giữ trọn ý nghĩa và tránh nhầm lẫn điều khoản giữa các chương.
 
-### 🔍 Hybrid Retrieval (Truy hồi lai)
+###  Hybrid Retrieval (Truy hồi lai)
 Kết hợp hai phương pháp để tối ưu hóa kết quả:
 * **Sparse Retrieval (BM25):** Mạnh trong việc tìm kiếm từ khóa chính xác và số hiệu điều khoản.
 * **Dense Retrieval (Vector Search):** Hiểu được ý nghĩa ngữ nghĩa của các câu hỏi tự nhiên từ sinh viên.
 
-### ⚖️ Cross-Encoder Re-ranking
+###  Cross-Encoder Re-ranking
 * Các đoạn văn bản sau khi truy hồi được chấm điểm lại bằng Re-ranker (`bge-reranker-v2-m3`).
 * Chỉ những nội dung liên quan nhất mới được đưa vào mô hình sinh (LLM), giúp tăng độ chính xác và giảm nhiễu.
 
-### 🛡️ Refusal Mechanism
+###  Refusal Mechanism
 * Hệ thống chỉ trả lời dựa trên ngữ cảnh đã được truy hồi.
 * Nếu điểm truy hồi dưới ngưỡng an toàn, hệ thống sẽ từ chối trả lời để tránh hiện tượng ảo giác (hallucination).
 
 ---
 
-## 🛠 Kiến trúc Công nghệ (Tech Stack)
+##  Kiến trúc Công nghệ (Tech Stack)
 
 Hệ thống được tối ưu để chạy trên môi trường tài nguyên giới hạn như **Google Colab** hoặc **GPU T4**.
 
@@ -51,7 +50,7 @@ Hệ thống được tối ưu để chạy trên môi trường tài nguyên g
 
 ---
 
-## 📊 Đánh giá Hệ thống (RAGAS Evaluation)
+##  Đánh giá Hệ thống (RAGAS Evaluation)
 
 Kết quả đánh giá trên 50 câu hỏi kiểm thử thực tế:
 
@@ -65,24 +64,23 @@ Kết quả đánh giá trên 50 câu hỏi kiểm thử thực tế:
 
 ---
 
-## 🚀 Hướng dẫn Cài đặt và Chạy
+##  Hướng dẫn Cài đặt và Chạy
 
 ### 1. Clone repository
-```bash
+
 git clone [https://github.com/Ducminh1611/husc-student-rag-chatbot.git](https://github.com/Ducminh1611/husc-student-rag-chatbot.git)
 cd husc-student-rag-chatbot
 
 
 ### 2. Cài đặt thư viện
 Cài đặt các gói phụ thuộc cần thiết (PyTorch, Transformers, LangChain, v.v.):
-```bash
+
 pip install -r requirements.txt
 Bash
 python build_db.py
 
 
 ###3. Chạy ứng dụng Streamlit
-```Bash
 streamlit run app.py
 Yêu cầu Phần cứng
 GPU khuyến nghị: Tối thiểu 8GB VRAM (để chạy Qwen2.5-7B 4-bit).
@@ -94,7 +92,7 @@ Phạm Văn Quân
 Đỗ Văn Sinh
 Nguyễn Đức Minh
 
-## 📚 Tài liệu tham khảo (References)
+## Tài liệu tham khảo (References)
 
 Hệ thống được xây dựng dựa trên các nghiên cứu và công nghệ tiên tiến trong lĩnh vực NLP và Hệ thống truy hồi:
 
